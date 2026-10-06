@@ -1,1380 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASTRAVA — Your Cosmic Story</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* BOX 2 KA CSS YAHAN PASTE KARNA HAI */
-    *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-:root{
-  --bg:#07070d;
-  --card:#10101a;
-  --card2:#151522;
-  --text:#f7f4ff;
-  --muted:#9995aa;
-  --gold:#d7ad62;
-  --gold2:#f2d18a;
-  --purple:#8d69d8;
-  --line:rgba(215,173,98,.20);
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:
-    radial-gradient(circle at 50% -10%,rgba(119,72,190,.25),transparent 35%),
-    var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  line-height:1.5;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1120px,92%);
-  margin:auto;
-}
-
-/* NAVIGATION */
-
-nav{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(7,7,13,.82);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.nav-inner{
-  height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  font-family:Cinzel,serif;
-  letter-spacing:3px;
-  font-weight:700;
-  color:var(--gold2);
-  font-size:20px;
-}
-
-.nav-links{
-  display:flex;
-  gap:25px;
-  color:#c8c4d4;
-  font-size:13px;
-}
-
-.nav-links a:hover{
-  color:var(--gold2);
-}
-
-.nav-btn{
-  border:1px solid var(--line);
-  padding:10px 16px;
-  border-radius:30px;
-  color:var(--gold2);
-  font-size:12px;
-}
-
-/* HERO */
-
-.hero{
-  min-height:720px;
-  display:flex;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.stars{
-  position:absolute;
-  inset:0;
-  opacity:.45;
-  background-image:
-    radial-gradient(circle,#fff 1px,transparent 1px),
-    radial-gradient(circle,#d7ad62 1px,transparent 1px);
-  background-size:100px 100px,160px 160px;
-  background-position:20px 30px,70px 80px;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:850px;
-  margin:auto;
-}
-
-.eyebrow{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  margin-bottom:25px;
-}
-
-h1{
-  font-family:Cinzel,serif;
-  font-size:clamp(38px,7vw,76px);
-  line-height:1.05;
-  margin-bottom:24px;
-}
-
-.hero h1 span{
-  color:var(--gold2);
-}
-
-.hero p{
-  max-width:650px;
-  margin:auto;
-  color:var(--muted);
-  font-size:16px;
-}
-
-.cta-row{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:35px;
-}
-
-.btn{
-  border:0;
-  cursor:pointer;
-  padding:15px 25px;
-  border-radius:8px;
-  font-weight:700;
-  font-size:13px;
-}
-
-.btn-primary{
-  background:linear-gradient(135deg,#f0ce86,#b98739);
-  color:#16110a;
-}
-
-.btn-secondary{
-  background:transparent;
-  color:#eee;
-  border:1px solid rgba(255,255,255,.14);
-}
-
-/* COMMON */
-
-.trust{
-  border-top:1px solid rgba(255,255,255,.06);
-  border-bottom:1px solid rgba(255,255,255,.06);
-  padding:22px 0;
-  text-align:center;
-  color:#858092;
-  font-size:12px;
-}
-
-section{
-  padding:90px 0;
-}
-
-.section-head{
-  text-align:center;
-  max-width:700px;
-  margin:0 auto 45px;
-}
-
-.section-head .eyebrow{
-  margin-bottom:13px;
-}
-
-h2{
-  font-family:Cinzel,serif;
-  font-size:clamp(28px,5vw,44px);
-  margin-bottom:14px;
-}
-
-.section-head p{
-  color:var(--muted);
-}
-
-/* READING */
-
-.reading-box{
-  max-width:800px;
-  margin:auto;
-  background:linear-gradient(145deg,#11111c,#0b0b12);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:35px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.field label{
-  display:block;
-  color:#aaa5b7;
-  font-size:11px;
-  margin-bottom:7px;
-}
-
-.field input{
-  width:100%;
-  background:#08080f;
-  border:1px solid rgba(255,255,255,.10);
-  color:white;
-  padding:14px;
-  border-radius:8px;
-  outline:none;
-}
-
-.field input:focus{
-  border-color:var(--gold);
-}
-
-.full{
-  grid-column:1/-1;
-}
-
-.reading-result{
-  display:none;
-  margin-top:28px;
-  padding:25px;
-  border-radius:12px;
-  background:#090911;
-  border:1px solid var(--line);
-}
-
-.result-title{
-  color:var(--gold2);
-  font-family:Cinzel,serif;
-  font-size:23px;
-  margin-bottom:10px;
-}
-
-.result-text{
-  color:#bbb7c5;
-  font-size:14px;
-}
-
-/* FEATURE CARDS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.card{
-  background:linear-gradient(145deg,#11111b,#0b0b12);
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:16px;
-  padding:27px;
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:var(--line);
-}
-
-.icon{
-  font-size:29px;
-  margin-bottom:18px;
-}
-
-.card h3{
-  font-family:Cinzel,serif;
-  margin-bottom:8px;
-  font-size:20px;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.card-link{
-  display:inline-block;
-  margin-top:17px;
-  color:var(--gold2);
-  font-size:12px;
-}
-
-/* LOVE */
-
-.love-section{
-  background:
-    radial-gradient(circle at 20% 50%,rgba(117,45,111,.20),transparent 35%),
-    #09090f;
-}
-
-.love-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-}
-
-.love-main{
-  padding:45px;
-  border-radius:20px;
-  border:1px solid rgba(216,130,177,.18);
-  background:linear-gradient(145deg,#17101b,#0d0b13);
-}
-
-.love-main h3{
-  font-family:Cinzel,serif;
-  font-size:32px;
-  margin-bottom:15px;
-}
-
-.love-main p{
-  color:var(--muted);
-}
-
-.love-list{
-  display:grid;
-  gap:12px;
-  margin-top:25px;
-}
-
-.love-item{
-  padding:15px;
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:10px;
-  color:#d8d4df;
-  font-size:13px;
-}
-
-/* RITUAL */
-
-.ritual{
-  background:
-    radial-gradient(circle at 80% 30%,rgba(92,56,160,.22),transparent 30%);
-}
-
-.ritual-box{
-  padding:50px;
-  text-align:center;
-  border-radius:22px;
-  border:1px solid var(--line);
-  background:linear-gradient(145deg,#15131e,#0b0a10);
-}
-
-.ritual-box p{
-  max-width:650px;
-  margin:15px auto;
-  color:var(--muted);
-}
-
-/* PRICING */
-
-.pricing{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.price-card{
-  padding:28px 22px;
-  border-radius:16px;
-  background:#10101a;
-  border:1px solid rgba(255,255,255,.07);
-}
-
-.price-card.featured{
-  border-color:var(--gold);
-}
-
-.price-card h3{
-  font-family:Cinzel,serif;
-  font-size:18px;
-}
-
-.price{
-  font-size:34px;
-  font-weight:700;
-  margin:16px 0;
-  color:var(--gold2);
-}
-
-.price-card ul{
-  list-style:none;
-  color:#aaa5b5;
-  font-size:12px;
-}
-
-.price-card li{
-  margin:9px 0;
-}
-
-.price-card li::before{
-  content:"✦ ";
-  color:var(--gold);
-}
-
-/* FOOTER */
-
-footer{
-  padding:55px 0 30px;
-  border-top:1px solid rgba(255,255,255,.07);
-  color:#777283;
-  font-size:12px;
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.disclaimer{
-  margin-top:35px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.06);
-  color:#65616f;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero{
-    min-height:650px;
-  }
-
-  section{
-    padding:70px 0;
-  }
-
-  .form-grid,
-  .love-box{
-    grid-template-columns:1fr;
-  }
-
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .pricing{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-}
-   </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRAVA VIP | Supreme Cosmic & Occult Sanctuary</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #05030a; color: #f3f4f6; }
+        .heading-font { font-family: 'Cinzel', serif; }
+        .gold-gradient { background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #b45309 100%); }
+        .card-vip { backdrop-filter: blur(20px); background: rgba(15, 11, 26, 0.95); border: 1px solid rgba(245, 158, 11, 0.25); }
+        .vip-glow { box-shadow: 0 0 50px -10px rgba(245, 158, 11, 0.2); }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+    </style>
 </head>
+<body class="min-h-screen selection:bg-amber-400 selection:text-slate-950">
 
-<body>
-
-<nav>
-  <div class="container nav-inner">
-
-    <a class="logo" href="#">ASTRAVA</a>
-
-    <div class="nav-links">
-      <a href="#reading">My Reading</a>
-      <a href="#explore">Explore</a>
-      <a href="#love">Love</a>
-      <a href="#pricing">Reports</a>
+    <!-- Top VIP Banner -->
+    <div class="bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700 text-slate-950 font-black text-xs md:text-sm text-center py-2 px-4 uppercase tracking-wider">
+        ✨ VIP OCCULT ACCESS: Custom Photo & Palm Analysis Slots Active For Today
     </div>
 
-    <a class="nav-btn" href="#reading">
-      BEGIN READING
-    </a>
-
-  </div>
-</nav>
-
-<header class="hero">
-
-  <div class="stars"></div>
-
-  <div class="container hero-content">
-
-    <div class="eyebrow">
-      ASTROLOGY • TAROT • NUMEROLOGY
-    </div>
-
-    <h1>
-      Your Birth.<br>
-      Your <span>Cosmic Story.</span>
-    </h1>
-
-    <p>
-      Discover the patterns, possibilities and themes
-      reflected in your birth details through personalized
-      astrology and spiritual guidance.
-    </p>
-
-    <div class="cta-row">
-
-      <a href="#reading" class="btn btn-primary">
-        🔮 DISCOVER MY READING
-      </a>
-
-      <a href="#love" class="btn btn-secondary">
-        ❤️ EXPLORE LOVE
-      </a>
-
-    </div>
-
-  </div>
-
-</header>
-
-<div class="trust">
-  PERSONALIZED • PRIVATE • AVAILABLE ANYTIME
-</div>
-
-
-<!-- FREE READING -->
-
-<section id="reading">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <div class="eyebrow">
-        FREE EXPERIENCE
-      </div>
-
-      <h2>
-        Begin Your Cosmic Reading
-      </h2>
-
-      <p>
-        Enter your birth details to generate your
-        personalized introductory profile.
-      </p>
-
-    </div>
-
-
-    <div class="reading-box">
-
-      <div class="form-grid">
-
-        <div class="field">
-
-          <label>
-            YOUR NAME
-          </label>
-
-          <input
-            id="name"
-            placeholder="Enter your name"
-          >
-
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 card-vip border-b border-amber-500/20">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="heading-font text-xl md:text-2xl font-black tracking-widest text-amber-400">
+                ASTRA<span class="text-white">VA</span> <span class="text-xs bg-amber-500 text-slate-950 px-2 py-0.5 rounded ml-1 font-sans">VIP</span>
+            </div>
+            <a href="#portals" class="gold-gradient text-slate-950 font-extrabold px-5 py-2 rounded-full text-xs uppercase tracking-wider shadow-lg">
+                Select Portal
+            </a>
         </div>
+    </nav>
 
-
-        <div class="field">
-
-          <label>
-            DATE OF BIRTH
-          </label>
-
-          <input
-            id="dob"
-            type="date"
-          >
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            BIRTH TIME
-          </label>
-
-          <input
-            id="time"
-            type="time"
-          >
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            BIRTH PLACE
-          </label>
-
-          <input
-            id="place"
-            placeholder="City, Country"
-          >
-
-        </div>
-
-
-        <div class="field full">
-
-          <button
-            class="btn btn-primary"
-            style="width:100%"
-            onclick="generateReading()"
-          >
-            ✦ REVEAL MY PROFILE
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="reading-result"
-        id="result"
-      >
-
-        <div class="result-title">
-          YOUR COSMIC PROFILE
-        </div>
-
-        <p
-          class="result-text"
-          id="resultText"
-        ></p>
-
-        <div class="cta-row">
-
-          <button
-            class="btn btn-primary"
-            onclick="document.getElementById('pricing').scrollIntoView()"
-          >
-            UNLOCK COMPLETE READING
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- EXPLORE -->
-
-<section id="explore">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <div class="eyebrow">
-        EXPLORE YOURSELF
-      </div>
-
-      <h2>
-        One Place. Many Questions.
-      </h2>
-
-      <p>
-        Choose the part of your life you want to explore.
-      </p>
-
-    </div>
-
-
-    <div class="grid">
-
-
-      <div class="card">
-
-        <div class="icon">🔮</div>
-
-        <h3>
-          Astrology
-        </h3>
-
-        <p>
-          Explore your birth chart, personality patterns
-          and life themes.
+    <!-- Hero Section -->
+    <header class="max-w-4xl mx-auto px-4 pt-16 pb-12 text-center">
+        <h1 class="heading-font text-4xl md:text-6xl font-black tracking-tight mb-4">
+            YOUR BIRTH. YOUR <br><span class="text-transparent bg-clip-text gold-gradient">COSMIC STORY.</span>
+        </h1>
+        <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base mb-10 leading-relaxed">
+            Discover the patterns, occult secrets, and custom photo-verified predictions reflected in your spiritual blueprint.
         </p>
+    </header>
 
-        <a
-          class="card-link"
-          href="#reading"
-        >
-          EXPLORE →
-        </a>
+    <!-- Dedicated Portal Selection Boxes (The Core Feature) -->
+    <section id="portals" class="max-w-4xl mx-auto px-4 mb-16">
+        <p class="text-center text-xs uppercase tracking-widest text-amber-400 font-extrabold mb-6">Choose Your Specific Path & Crisis</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Box 1: Manchaha Pyar -->
+            <div onclick="switchTab('pyarPortal')" class="card-vip p-6 rounded-2xl hover:border-amber-400 transition cursor-pointer group border border-amber-500/30">
+                <span class="text-3xl mb-2 block group-hover:scale-110 transition">❤️‍🔥</span>
+                <h3 class="heading-font font-bold text-lg text-amber-300 mb-1">Manchaha Pyar & Ex Back</h3>
+                <p class="text-xs text-gray-400 mb-4">With photo upload & secret ritual guidance.</p>
+                <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Open Portal →</span>
+            </div>
 
-      </div>
+            <!-- Box 2: Kala Jadu & Negative Energy -->
+            <div onclick="switchTab('jaduPortal')" class="card-vip p-6 rounded-2xl hover:border-red-500/50 transition cursor-pointer group border border-red-500/30">
+                <span class="text-3xl mb-2 block group-hover:scale-110 transition">🧿</span>
+                <h3 class="heading-font font-bold text-lg text-red-400 mb-1">Kala Jadu & Evil Eye Check</h3>
+                <p class="text-xs text-gray-400 mb-4">Deep occult scan & protection remedies.</p>
+                <span class="text-xs text-red-400 font-bold uppercase tracking-wider">Open Portal →</span>
+            </div>
 
+            <!-- Box 3: Wealth & Career -->
+            <div onclick="switchTab('wealthPortal')" class="card-vip p-6 rounded-2xl hover:border-amber-400 transition cursor-pointer group border border-amber-500/30">
+                <span class="text-3xl mb-2 block group-hover:scale-110 transition">💰</span>
+                <h3 class="heading-font font-bold text-lg text-amber-300 mb-1">Wealth & Palm Analysis</h3>
+                <p class="text-xs text-gray-400 mb-4">Upload palm photo for financial forecast.</p>
+                <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Open Portal →</span>
+            </div>
 
-      <div class="card">
+            <!-- Box 4: Standard General Reading -->
+            <div onclick="switchTab('generalPortal')" class="card-vip p-6 rounded-2xl hover:border-amber-400 transition cursor-pointer group border border-amber-500/30">
+                <span class="text-3xl mb-2 block group-hover:scale-110 transition">🔮</span>
+                <h3 class="heading-font font-bold text-lg text-amber-300 mb-1">Complete 12-Month Blueprint</h3>
+                <p class="text-xs text-gray-400 mb-4">Standard birth chart & future outlook.</p>
+                <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Open Portal →</span>
+            </div>
 
-        <div class="icon">❤️</div>
+        </div>
+    </section>
 
-        <h3>
-          Love
-        </h3>
+    <!-- ================= DYNAMIC PHOTO UPLOAD FORM PANELS ================= -->
 
-        <p>
-          Explore relationship patterns, compatibility
-          and emotional tendencies.
-        </p>
-
-        <a
-          class="card-link"
-          href="#love"
-        >
-          EXPLORE →
-        </a>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">💍</div>
-
-        <h3>
-          Marriage
-        </h3>
-
-        <p>
-          Explore relationship and marriage-oriented
-          interpretations.
-        </p>
-
-        <a
-          class="card-link"
-          href="#pricing"
-        >
-          EXPLORE →
-        </a>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🃏</div>
-
-        <h3>
-          Tarot
-        </h3>
-
-        <p>
-          Ask a question and explore a three-card
-          spiritual reading experience.
-        </p>
-
-        <a
-          class="card-link"
-          href="#pricing"
-        >
-          DRAW CARDS →
-        </a>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">✋</div>
-
-        <h3>
-          Palm Reading
-        </h3>
-
-        <p>
-          Upload your palm later and receive an
-          interpretive palmistry experience.
-        </p>
-
-        <a
-          class="card-link"
-          href="#pricing"
-        >
-          EXPLORE →
-        </a>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🔢</div>
-
-        <h3>
-          Numerology
-        </h3>
-
-        <p>
-          Discover numbers associated with your name
-          and birth date.
-        </p>
-
-        <a
-          class="card-link"
-          href="#pricing"
-        >
-          CALCULATE →
-        </a>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">💼</div>
-
-        <h3>
-          Career
-        </h3>
-
-        <p>
-          Explore career strengths, working styles
-          and professional tendencies.
-        </p>
-
-        <a
-          class="card-link"
-          href="#pricing"
-        >
-          EXPLORE →
-        </a>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">💰</div>
-
-        <h3>
-          Money
-        </h3>
-
-        <p>
-          Explore your financial personality and
-          general money-related patterns.
-        </p>
-
-        <a
-          class="card-link"
-          href="#pricing"
-        >
-          EXPLORE →
-        </a>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="icon">🌙</div>
-
-        <h3>
-          Daily Guidance
-        </h3>
-
-        <p>
-          Return every day for personalized
-          spiritual guidance.
-        </p>
-
-        <a
-          class="card-link"
-          href="#pricing"
-        >
-          VIEW →
-        </a>
-
-      </div>
-
+    <!-- 1. MANCHAHA PYAR PORTAL -->
+    <div id="pyarPortal" class="tab-panel active max-w-2xl mx-auto px-4 pb-24">
+        <div class="card-vip p-8 rounded-3xl vip-glow border-2 border-amber-400">
+            <div class="mb-6 border-b border-amber-500/20 pb-4 flex justify-between items-center">
+                <div>
+                    <span class="text-xs text-amber-400 font-bold uppercase">With Photo Upload</span>
+                    <h2 class="heading-font text-2xl font-bold text-white">❤️ Manchaha Pyar Portal</h2>
+                </div>
+                <span class="bg-amber-500 text-slate-950 font-black text-xs px-3 py-1 rounded">₹1,499</span>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Aapka Pura Naam</label>
+                    <input type="text" required placeholder="Full name" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1">Aapki DOB</label>
+                        <input type="date" required class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1">Partner ka Naam</label>
+                        <input type="text" required placeholder="Partner name" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 bg-slate-950/60 p-4 rounded-xl border border-amber-500/20">
+                    <div>
+                        <label class="block text-xs font-bold text-amber-300 mb-1">📸 Aapki Photo</label>
+                        <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-amber-300 mb-1">📸 Partner ki Photo</label>
+                        <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">WhatsApp Number</label>
+                    <input type="tel" required placeholder="Mobile number" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <button type="submit" class="w-full gold-gradient text-slate-950 font-black py-3.5 rounded-xl uppercase tracking-wider text-sm shadow-xl">
+                    Unlock Manchaha Pyar Report (₹1,499)
+                </button>
+            </form>
+        </div>
     </div>
 
-  </div>
-
-</section>
-
-
-<!-- LOVE -->
-
-<section
-  id="love"
-  class="love-section"
->
-
-  <div class="container">
-
-    <div class="love-box">
-
-
-      <div class="love-main">
-
-        <div class="eyebrow">
-          LOVE & CONNECTION
+    <!-- 2. KALA JADU PORTAL -->
+    <div id="jaduPortal" class="tab-panel max-w-2xl mx-auto px-4 pb-24">
+        <div class="card-vip p-8 rounded-3xl vip-glow border-2 border-red-500">
+            <div class="mb-6 border-b border-red-500/20 pb-4 flex justify-between items-center">
+                <div>
+                    <span class="text-xs text-red-400 font-bold uppercase">Occult Scan</span>
+                    <h2 class="heading-font text-2xl font-bold text-white">🧿 Kala Jadu & Evil Eye Check</h2>
+                </div>
+                <span class="bg-red-600 text-white font-black text-xs px-3 py-1 rounded">₹1,999</span>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Aapka Pura Naam</label>
+                    <input type="text" required placeholder="Full name" class="w-full bg-slate-950 border border-red-900/60 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Pareshani ki Detail (Kya mehsus ho raha hai?)</label>
+                    <textarea rows="2" placeholder="Write issue..." class="w-full bg-slate-950 border border-red-900/60 rounded-xl px-4 py-3 text-white text-sm"></textarea>
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-xl border border-red-500/20">
+                    <label class="block text-xs font-bold text-red-300 mb-1">📸 Face ya Hatheli (Palm) ki Photo Upload Karein</label>
+                    <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:bg-red-600 file:text-white file:font-bold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">WhatsApp Number</label>
+                    <input type="tel" required placeholder="Mobile number" class="w-full bg-slate-950 border border-red-900/60 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-rose-700 text-white font-black py-3.5 rounded-xl uppercase tracking-wider text-sm shadow-xl">
+                    Run Occult Scan & Remove Dosh (₹1,999)
+                </button>
+            </form>
         </div>
-
-        <h3>
-          What Does Your Connection Really Mean?
-        </h3>
-
-        <p>
-          Explore compatibility, attraction,
-          relationship patterns and spiritual guidance
-          for your love journey.
-        </p>
-
-
-        <div class="love-list">
-
-          <div class="love-item">
-            ❤️ Love Compatibility
-          </div>
-
-          <div class="love-item">
-            💘 Connection Reading
-          </div>
-
-          <div class="love-item">
-            💍 Marriage Reading
-          </div>
-
-          <div class="love-item">
-            💔 Breakup & Healing Guidance
-          </div>
-
-          <div class="love-item">
-            ✨ Attraction & Manifestation Guide
-          </div>
-
-        </div>
-
-
-        <div
-          class="cta-row"
-          style="justify-content:flex-start"
-        >
-
-          <a
-            href="#pricing"
-            class="btn btn-primary"
-          >
-            EXPLORE LOVE READING
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="love-main">
-
-        <div class="eyebrow">
-          COMPATIBILITY
-        </div>
-
-        <h3>
-          Two Birth Dates.
-        </h3>
-
-        <p>
-          Enter your details and your partner's details
-          to explore a personalized compatibility
-          experience.
-        </p>
-
-
-        <div class="love-list">
-
-          <div class="love-item">
-            ❤️ Emotional Connection
-          </div>
-
-          <div class="love-item">
-            🧠 Communication Patterns
-          </div>
-
-          <div class="love-item">
-            🔥 Attraction
-          </div>
-
-          <div class="love-item">
-            💞 Relationship Strengths
-          </div>
-
-          <div class="love-item">
-            🌙 Long-Term Themes
-          </div>
-
-        </div>
-
-
-        <div
-          class="cta-row"
-          style="justify-content:flex-start"
-        >
-
-          <a
-            href="#pricing"
-            class="btn btn-secondary"
-          >
-            CHECK COMPATIBILITY
-          </a>
-
-        </div>
-
-      </div>
-
     </div>
 
-  </div>
-
-</section>
-
-
-<!-- SPIRITUAL -->
-
-<section class="ritual">
-
-  <div class="container">
-
-    <div class="ritual-box">
-
-      <div class="eyebrow">
-        SPIRITUAL GUIDANCE
-      </div>
-
-      <h2>
-        Intentions. Rituals. Reflection.
-      </h2>
-
-      <p>
-        Explore guided spiritual practices, affirmations,
-        meditation and manifestation-style exercises
-        designed around your personal intention.
-      </p>
-
-      <div class="cta-row">
-
-        <a
-          href="#pricing"
-          class="btn btn-primary"
-        >
-          EXPLORE SPIRITUAL GUIDANCE
-        </a>
-
-      </div>
-
+    <!-- 3. WEALTH & PALM PORTAL -->
+    <div id="wealthPortal" class="tab-panel max-w-2xl mx-auto px-4 pb-24">
+        <div class="card-vip p-8 rounded-3xl vip-glow border-2 border-amber-400">
+            <div class="mb-6 border-b border-amber-500/20 pb-4 flex justify-between items-center">
+                <div>
+                    <span class="text-xs text-amber-400 font-bold uppercase">Palmistry</span>
+                    <h2 class="heading-font text-2xl font-bold text-white">💰 Wealth & Palm Analysis</h2>
+                </div>
+                <span class="bg-amber-500 text-slate-950 font-black text-xs px-3 py-1 rounded">₹999</span>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Aapka Pura Naam</label>
+                    <input type="text" required placeholder="Full name" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <div class="bg-slate-950/60 p-4 rounded-xl border border-amber-500/20">
+                    <label class="block text-xs font-bold text-amber-300 mb-1">📸 Apne Seedhe Haath (Right Palm) ki Clear Photo Upload Karein</label>
+                    <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">WhatsApp Number</label>
+                    <input type="tel" required placeholder="Mobile number" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <button type="submit" class="w-full gold-gradient text-slate-950 font-black py-3.5 rounded-xl uppercase tracking-wider text-sm shadow-xl">
+                    Analyze Palm & Wealth Forecast (₹999)
+                </button>
+            </form>
+        </div>
     </div>
 
-  </div>
-
-</section>
-
-
-<!-- PRICING -->
-
-<section id="pricing">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <div class="eyebrow">
-        PERSONALIZED REPORTS
-      </div>
-
-      <h2>
-        Go Deeper
-      </h2>
-
-      <p>
-        Unlock detailed interpretations designed
-        around your personal questions.
-      </p>
-
+    <!-- 4. GENERAL BLUEPRINT PORTAL -->
+    <div id="generalPortal" class="tab-panel max-w-2xl mx-auto px-4 pb-24">
+        <div class="card-vip p-8 rounded-3xl vip-glow border-2 border-amber-400">
+            <div class="mb-6 border-b border-amber-500/20 pb-4 flex justify-between items-center">
+                <div>
+                    <span class="text-xs text-amber-400 font-bold uppercase">Vedic Astrology</span>
+                    <h2 class="heading-font text-2xl font-bold text-white">🔮 Complete 12-Month Blueprint</h2>
+                </div>
+                <span class="bg-amber-500 text-slate-950 font-black text-xs px-3 py-1 rounded">₹599</span>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Aapka Pura Naam</label>
+                    <input type="text" required placeholder="Full name" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-300 mb-1">DOB</label>
+                        <input type="date" required class="w-full bg-slate-950 border border-purple-900 rounded-xl px-2 py-3 text-white text-xs">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-300 mb-1">Time</label>
+                        <input type="time" required class="w-full bg-slate-950 border border-purple-900 rounded-xl px-2 py-3 text-white text-xs">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-300 mb-1">Place</label>
+                        <input type="text" required placeholder="City" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-2 py-3 text-white text-xs">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">WhatsApp Number</label>
+                    <input type="tel" required placeholder="Mobile number" class="w-full bg-slate-950 border border-purple-900 rounded-xl px-4 py-3 text-white text-sm">
+                </div>
+                <button type="submit" class="w-full gold-gradient text-slate-950 font-black py-3.5 rounded-xl uppercase tracking-wider text-sm shadow-xl">
+                    Reveal Full Chart (₹599)
+                </button>
+            </form>
+        </div>
     </div>
 
-
-    <div class="pricing">
-
-
-      <div class="price-card">
-
-        <h3>
-          Quick Reading
-        </h3>
-
-        <div class="price">
-          ₹99
-        </div>
-
-        <ul>
-          <li>Personal profile</li>
-          <li>Key personality themes</li>
-          <li>Basic guidance</li>
-        </ul>
-
-        <button
-          class="btn btn-secondary"
-          style="width:100%;margin-top:22px"
-        >
-          UNLOCK
-        </button>
-
-      </div>
-
-
-      <div class="price-card featured">
-
-        <h3>
-          Love Reading
-        </h3>
-
-        <div class="price">
-          ₹199
-        </div>
-
-        <ul>
-          <li>Love profile</li>
-          <li>Relationship patterns</li>
-          <li>Compatibility themes</li>
-          <li>Detailed guidance</li>
-        </ul>
-
-        <button
-          class="btn btn-primary"
-          style="width:100%;margin-top:22px"
-        >
-          UNLOCK
-        </button>
-
-      </div>
-
-
-      <div class="price-card">
-
-        <h3>
-          Complete Chart
-        </h3>
-
-        <div class="price">
-          ₹399
-        </div>
-
-        <ul>
-          <li>Full birth profile</li>
-          <li>Love & career</li>
-          <li>Money themes</li>
-          <li>Extended report</li>
-        </ul>
-
-        <button
-          class="btn btn-secondary"
-          style="width:100%;margin-top:22px"
-        >
-          UNLOCK
-        </button>
-
-      </div>
-
-
-      <div class="price-card">
-
-        <h3>
-          12-Month Guide
-        </h3>
-
-        <div class="price">
-          ₹599
-        </div>
-
-        <ul>
-          <li>12-month timeline</li>
-          <li>Love guidance</li>
-          <li>Career themes</li>
-          <li>Monthly insights</li>
-        </ul>
-
-        <button
-          class="btn btn-secondary"
-          style="width:100%;margin-top:22px"
-        >
-          UNLOCK
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-inner">
-
-      <div>
-
-        <div class="logo">
-          ASTRAVA
-        </div>
-
-        <p style="margin-top:8px">
-          Your cosmic story, interpreted personally.
-        </p>
-
-      </div>
-
-      <div>
-        Privacy • Terms • Contact
-      </div>
-
-    </div>
-
-
-    <div class="disclaimer">
-
-      Astrology and spiritual readings are provided
-      for guidance and entertainment. They should not
-      be treated as guaranteed predictions or professional
-      financial, medical or legal advice.
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-<script>
-
-function generateReading(){
-
-  const name =
-    document.getElementById("name").value.trim();
-
-  const dob =
-    document.getElementById("dob").value;
-
-  const place =
-    document.getElementById("place").value.trim();
-
-
-  if(!name || !dob || !place){
-
-    alert(
-      "Please enter your name, date of birth and birth place."
-    );
-
-    return;
-  }
-
-
-  const result =
-    document.getElementById("result");
-
-  const text =
-    document.getElementById("resultText");
-
-
-  text.innerHTML = `
-
-    <strong>${name}</strong>,
-    your introductory profile is ready.
-
-    <br><br>
-
-    Your birth details can be used to create
-    a deeper personalized interpretation covering
-    personality, relationships, career and life themes.
-
-    <br><br>
-
-    <span style="color:#d7ad62">
-
-      Your complete reading is waiting to be unlocked.
-
-    </span>
-
-  `;
-
-
-  result.style.display = "block";
-
-
-  result.scrollIntoView({
-
-    behavior:"smooth",
-    block:"center"
-
-  });
-
-}
-
-</script>
-
+    <!-- JavaScript for Interactive Portal Switcher -->
+    <script>
+        function switchTab(panelId) {
+            document.querySelectorAll('.tab-panel').forEach(el => el.classList.remove('active'));
+            document.getElementById(panelId).classList.add('active');
+            window.location.hash = panelId;
+        }
+    </script>
 </body>
 </html>
-@media(max-width:520px){
-
-  .grid,
-  .pricing{
-    grid-template-columns:1fr;
-  }
-
-  .reading-box{
-    padding:22px;
-  }
-
-  .love-main{
-    padding:30px;
-  }
-
-  .ritual-box{
-    padding:30px 20px;
-  }
-
-  .hero p{
-    font-size:14px;
-  }
-}
-    
