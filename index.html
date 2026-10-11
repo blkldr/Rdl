@@ -1126,22 +1126,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             renderReviews();
         });  
-                let currentAlertIdx = Number(localStorage.getItem('astro_alert_idx')) || 0;
-        
-        setInterval(function() {
-            currentAlertIdx = (currentAlertIdx + 1) % alertsList.length;
-            localStorage.setItem('astro_alert_idx', currentAlertIdx);
             
-            var el = document.getElementById('alertText');
-            if(el) {
-                el.style.opacity = '0';
-                setTimeout(function() {
-                    el.innerText = alertsList[currentAlertIdx];
-                    el.style.opacity = '1';
-                }, 300);
-            }
-        }, 5000);
-        
             function handleFormSubmit(event, targetUrl) {
         event.preventDefault();
         const formData = new FormData(event.target);
