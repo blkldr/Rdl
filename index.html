@@ -836,7 +836,8 @@
                     <span class="${badgeBg} font-black text-sm px-4 py-1.5 rounded-xl shadow-md">${data.price}</span>
                 </div>
 
-                <form action="${data.action || 'https://payments.cashfree.com/forms?code=astrovedic-1hhHmanchaha-pyarhhhhH'}" method="GET" class="space-y-5">
+                <form action="${data.action ? data.action : 'https://payments.cashfree.com/forms?code=astrovedic-1hhHmanchaha-pyarhhhhH'}" method="GET" class="space-y-5">
+                
                 
                 
                     ${data.fields}
