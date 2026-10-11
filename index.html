@@ -1132,6 +1132,25 @@
         fetch("https://api.web3forms.com/submit", { method: "POST", body: formData })
             .finally(() => { window.location.href = targetUrl; });
             }
+                let currentAlertIdx = parseInt(localStorage.getItem('astro_alert_idx')) || 0;
+
+        setInterval(() => {
+            currentAlertIdx++;
+            if (currentAlertIdx >= alertsList.length) {
+                currentAlertIdx = 0;
+            }
+            localStorage.setItem('astro_alert_idx', currentAlertIdx);
+
+            const el = document.getElementById('alertText');
+            if(el) {
+                el.style.opacity = 0;
+                setTimeout(() => {
+                    el.innerText = alertsList[currentAlertIdx];
+                    el.style.opacity = 1;
+                }, 300);
+            }
+        }, 5000);
+        
     </script>
 </body>
 </html>
