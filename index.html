@@ -831,13 +831,17 @@
                     <span class="${badgeBg} font-black text-sm px-4 py-1.5 rounded-xl shadow-md">${data.price}</span>
                 </div>
 
-                <div class="space-y-5">
-                    ${data.fields}
-                    <button type="button" onclick="window.location.href='${targetUrl}'" class="w-full ${btnBg} font-black py-4 rounded-2xl shadow-2xl uppercase tracking-wider text-sm hover:opacity-95 transition cursor-pointer">
-                        सुरक्षित भुगतान करें और रिपोर्ट प्राप्त करें (${data.price})
-                    </button>
-                    <p class="text-center text-[11px] text-gray-400">🔒 100% गोपनीय व सुरक्षित • व्हाट्सएप पर तुरंत डिलीवरी</p>
-                </div>
+                    <form onsubmit="handleFormSubmit(event, '${targetUrl}')" class="space-y-5">
+        <input type="hidden" name="access_key" value="6aa10015-b67e-413c-9dab-a8ceb04f26cb">
+        <input type="hidden" name="subject" value="New Request: ${data.title}">
+        
+        ${data.fields}
+        
+        <button type="submit" class="w-full ${btnBg} font-black py-4 rounded-2xl shadow-2xl uppercase tracking-wider text-sm hover:opacity-95 transition cursor-pointer">
+            सुरक्षित भुगतान करें और रिपोर्ट प्राप्त करें (${data.price})
+        </button>
+        <p class="text-center text-[11px] text-gray-400">🔒 100% गोपनीय व सुरक्षित • व्हाट्सएप पर तुरंत डिलीवरी</p>
+    </form>
             `;
 
             document.getElementById('chamberContent').innerHTML = html;
@@ -1121,7 +1125,13 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             renderReviews();
-        });                   
+        });  
+            function handleFormSubmit(event, targetUrl) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        fetch("https://api.web3forms.com/submit", { method: "POST", body: formData })
+            .finally(() => { window.location.href = targetUrl; });
+            }
     </script>
 </body>
 </html>
