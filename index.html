@@ -775,7 +775,7 @@
                     <div><label class="block text-xs font-bold text-gray-300 mb-2">व्हाट्सएप नंबर</label><input type="tel" required placeholder="मोबाइल नंबर" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm"></div>
                 `
             },
-            kawach: {
+kawach: {
     title: "महा-अघोर रक्षा कवच (Universal Kawach)",
     price: "<span class='line-through text-amber-400'>₹11,000</span> <span class='text-amber-400'>₹4,999 (ऑनलाइन) / ₹5,599 (COD)</span>",
     icon: "🛡️",
@@ -783,34 +783,16 @@
     isRed: true,
     fields: [
         {
-            type: "html",
-            content: `
-                <div class="space-y-4 text-xs text-gray-300 bg-black/60 p-4 rounded-xl border border-red-500/30 text-left mb-4">
-                    <div class="inline-block px-2.5 py-1 bg-amber-500/20 border border-amber-500/40 rounded-full text-amber-300 font-semibold mb-2">
-                        🚚 भारत में सुरक्षित होम डिलीवरी: <strong>7 दिन के भीतर</strong>
-                    </div>
-                    <p class="text-amber-400 font-bold text-sm">🛡️ महा-अघोर रक्षा कवच: पूर्ण विवरण और उपयोग विधि</p>
-                    <p>यह कवच आपके जीवन की हर बुरी शक्ति, तंत्र-मंत्र और वार को दूर करने के लिए अघोर साधना द्वारा अभिमंत्रित किया गया है। यह 24 घंटे आपके चारों ओर आध्यात्मिक सुरक्षा घेरा बनाए रखता है।</p>
-                    <p class="text-amber-300 font-semibold mt-1">⚠️ किन कारणों से कवच "खंडित" (असरहीन) हो जाता है?</p>
-                    <ul class="list-disc pl-4 space-y-1 text-gray-300">
-                        <li><strong>धागा या ताबीज का टूट जाना:</strong> अचानक बिना खिंचाव के धागा टूटना या ताबीज फटना (यह बड़े खतरे को अपने ऊपर ले लेता है)।</li>
-                        <li><strong>जला हुआ या जंग लगना:</strong> ताबीज के अंदर से काला पड़ जाना या असामान्य जंग लगना (नकारात्मक शक्तियों को काटना)।</li>
-                        <li><strong>स्पर्श दोष या नियम टूटना:</strong> मांस-मदिरा सेवन, शारीरिक संबंध के दौरान शरीर पर न रखना, तथा श्मशान या सूतक काल में इसे शरीर पर धारण न करना।</li>
-                    </ul>
-                </div>
-            `
-        },
-        {
             label: "👤 आपका पूरा नाम:",
             type: "text",
             required: true,
             placeholder: "कवच मंगवाने वाले का पूरा नाम"
         },
         {
-            label: "📍 पूरा डिलीवरी पता (Address with Pincode):",
+            label: "📍 पूरा डिलीवरी पता (Address with Pincode - 7 दिन में डिलीवरी):",
             type: "textarea",
             required: true,
-            placeholder: "घर का पूरा पता, जिला और पिनकोड सहित (7 दिनों में डिलीवरी)"
+            placeholder: "घर का पूरा पता, जिला और पिनकोड सहित"
         },
         {
             label: "📞 मोबाइल नंबर (कॉलिंग और बिल/कन्फर्मेशन हेतु):",
@@ -819,31 +801,14 @@
             placeholder: "10 अंकों का मोबाइल नंबर"
         },
         {
-            label: "💳 भुगतान का तरीका चुनें (Payment Mode):",
-            type: "html",
-            content: `
-                <div class="grid grid-cols-1 gap-2 my-2">
-                    <label class="flex items-center p-3 bg-black/60 border border-amber-500/40 rounded-xl cursor-pointer">
-                        <input type="radio" name="payment_mode" value="online" checked class="text-amber-500 mr-2" onchange="updateKawachModalPrice()">
-                        <div>
-                            <div class="text-xs font-bold text-amber-300">ऑनलाइन पेमेंट (UPI/Card)</div>
-                            <div class="text-[11px] text-green-400 font-semibold">विशेष छूट: मात्र ₹4,999 <span class="line-through text-gray-500 font-normal">₹11,000</span></div>
-                        </div>
-                    </label>
-                    <label class="flex items-center p-3 bg-black/60 border border-amber-500/40 rounded-xl cursor-pointer">
-                        <input type="radio" name="payment_mode" value="cod" class="text-amber-500 mr-2" onchange="updateKawachModalPrice()">
-                        <div>
-                            <div class="text-xs font-bold text-amber-300">कैश ऑन डिलीवरी (COD)</div>
-                            <div class="text-[11px] text-amber-400 font-semibold">कीमत: ₹5,599 (कूरियर चार्ज सहित)</div>
-                        </div>
-                    </label>
-                </div>
-            `
+            label: "💳 भुगतान का तरीका चुनें (Online: ₹4,999 | COD: ₹5,599):",
+            type: "text",
+            required: true,
+            placeholder: "Online (₹4999) या COD (₹5599) यहाँ लिखें"
         }
     ]
 },
                     
-
         function showHome() {
             document.getElementById('homeView').classList.add('active');
             document.getElementById('chamberView').classList.remove('active');
