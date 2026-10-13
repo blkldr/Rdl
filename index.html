@@ -775,39 +775,46 @@
                     <div><label class="block text-xs font-bold text-gray-300 mb-2">व्हाट्सएप नंबर</label><input type="tel" required placeholder="मोबाइल नंबर" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm"></div>
                 `
             },
-kawach: {
-    title: "महा-अघोर रक्षा कवच (Universal Kawach)",
-    price: "<span class='line-through text-amber-400'>₹11,000</span> <span class='text-amber-400'>₹4,999 (ऑनलाइन) / ₹5,599 (COD)</span>",
-    icon: "🛡️",
-    badge: "कवच-कवच निवारण व सुरक्षा",
-    isRed: true,
-    fields: [
-        {
-            label: "👤 आपका पूरा नाम:",
-            type: "text",
-            required: true,
-            placeholder: "कवच मंगवाने वाले का पूरा नाम"
-        },
-        {
-            label: "📍 पूरा डिलीवरी पता (Address with Pincode - 7 दिन में डिलीवरी):",
-            type: "textarea",
-            required: true,
-            placeholder: "घर का पूरा पता, जिला और पिनकोड सहित"
-        },
-        {
-            label: "📞 मोबाइल नंबर (कॉलिंग और बिल/कन्फर्मेशन हेतु):",
-            type: "tel",
-            required: true,
-            placeholder: "10 अंकों का मोबाइल नंबर"
-        },
-        {
-            label: "💳 भुगतान का तरीका चुनें (Online: ₹4,999 | COD: ₹5,599):",
-            type: "text",
-            required: true,
-            placeholder: "Online (₹4999) या COD (₹5599) यहाँ लिखें"
-        }
-    ]
-},
+                kawach: {
+        title: "महा-अघोर रक्षा कवच (Universal Kawach)",
+        price: "<span class='line-through text-amber-400'>₹11,000</span> <span class='text-amber-400'>₹4,999</span>",
+        icon: "🛡️",
+        badge: "कवच-कवच निवारण व सुरक्षा",
+        isRed: true,
+        fields: [
+            {
+                type: "html",
+                content: `<div class="bg-nb-950/40 p-4 rounded-xl border border-red-500/30 text-left mb-4">
+                    <h4 class="text-xs font-bold text-red-300 mb-2 text-center">🛡️ महा-अघोर रक्षा कवच: पूर्ण विवरण और उपयोग विधि</h4>
+                    <p class="text-[11px] text-gray-300">यह कवच आपके जीवन की हर बुरी शक्ति, तंत्र-मंत्र और वार को दूर करने के लिए अघोर साधना द्वारा अभिमंत्रित किया गया है।</p>
+                </div>`
+            },
+            {
+                label: "👤 आपका पूरा नाम:",
+                type: "text",
+                required: true,
+                placeholder: "कवच मंगवाने वाले का पूरा नाम"
+            },
+            {
+                label: "📍 पूरा डिलीवरी पता (Address with Pincode - 7 दिन में डिलीवरी):",
+                type: "textarea",
+                required: true,
+                placeholder: "घर का पूरा पता, जिला और पिनकोड सहित"
+            },
+            {
+                label: "📞 मोबाइल नंबर (कॉलिंग और बिल/कन्फर्मेशन हेतु):",
+                type: "tel",
+                required: true,
+                placeholder: "10 अंकों का मोबाइल नंबर"
+            },
+            {
+                label: "💳 भुगतान का तरीका चुनें (Online: ₹4,999 | COD: ₹5,599):",
+                type: "text",
+                required: true,
+                placeholder: "Online (₹4,999) या COD (₹5,599) लिखें"
+            }
+        ]
+    },
                     
         function showHome() {
             document.getElementById('homeView').classList.add('active');
