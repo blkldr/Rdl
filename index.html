@@ -819,14 +819,14 @@
                 <label class="block text-xs font-bold text-amber-400 mb-2">💳 भुगतान का तरीका चुनें (Payment Mode):</label>
                 <div class="grid grid-cols-1 gap-2">
                     <label class="flex items-center p-3 bg-black/60 border border-amber-500/40 rounded-xl cursor-pointer">
-                        <input type="radio" name="payment_mode" value="online" checked class="text-amber-500 mr-2">
+                       <input type="radio" name="payment_mode" value="online" checked class="text-amber-500 mr-2" onchange="updateKawachForm()">
                         <div>
                             <div class="text-xs font-bold text-amber-300">ऑनलाइन पेमेंट (UPI/Card) - स्पेशल छूट</div>
                             <div class="text-[11px] text-green-400 font-semibold">मात्र ₹4,999 <span class="line-through text-gray-500 font-normal">₹11,000</span></div>
                         </div>
                     </label>
                     <label class="flex items-center p-3 bg-black/60 border border-amber-500/40 rounded-xl cursor-pointer">
-                        <input type="radio" name="payment_mode" value="cod" class="text-amber-500 mr-2">
+                        <input type="radio" name="payment_mode" value="cod" class="text-amber-500 mr-2" onchange="updateKawachForm()">
                         <div>
                             <div class="text-xs font-bold text-amber-300">कैश ऑन डिलीवरी (COD)</div>
                             <div class="text-[11px] text-amber-400 font-semibold">कीमत: ₹5,599 (कूरियर चार्ज सहित)</div>
@@ -1168,6 +1168,17 @@
         fetch("https://api.web3forms.com/submit", { method: "POST", body: formData })
             .finally(() => { window.location.href = targetUrl; });
             }
+        function updateKawachForm() {
+        const codRadio = document.querySelector('input[name="payment_mode"]:checked');
+        const submitBtn = document.querySelector('#chamberView button[type="submit"]');
+        if (!submitBtn || !codRadio) return;
+        
+        if (codRadio.value === 'cod') {
+            submitBtn.innerHTML = 'कैश ऑन डिलीवरी ऑर्डर कंफर्म करें (₹5,599)';
+        } else {
+            submitBtn.innerHTML = 'सुरक्षित भुगतान करें और रिपोर्ट प्राप्त करें <span class=\'text-amber-400\'>₹4,999</span>';
+        }
+        }
         
     </script>
 </body>
