@@ -1182,16 +1182,26 @@
                 formEl.onsubmit = function(event) {
                     event.preventDefault();
                     
-                    // 1. Pehle data ko Web3Forms par bhejenge taaki turant email aa jaye
-                    const formData = new FormData(event.target);
-                    if(!formData.has('access_key')) {
-                        formData.append('access_key', '6aa10015-b67e-413c-9dab-a8ceb04f26cb');
-                    }
-                    formData.set('subject', 'Mahaghor Raksha Kawach COD Order');
+                                const name = event.target.querySelector('input[type="text"]')?.value || '';
+                    const address = event.target.querySelector('textarea')?.value || '';
+                    const phone = event.target.querySelector('input[type="tel"]')?.value || '';
+                    
+                    const formData = {
+                        access_key: '6aa10015-b67e-413c-9dab-a8ceb04f26cb',
+                        subject: 'Mahaghor Raksha Kawach COD Order',
+                        name: name,
+                        address: address,
+                        phone: phone,
+                        payment_mode: 'Cash on Delivery (₹5,599)'
+                    };
                     
                     fetch("https://api.web3forms.com/submit", {
                         method: "POST",
-                        body: formData
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify(formData)
                     });
                     
                     // 2. Ab shandar success screen dikhayenge
