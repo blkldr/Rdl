@@ -1168,17 +1168,31 @@
         fetch("https://api.web3forms.com/submit", { method: "POST", body: formData })
             .finally(() => { window.location.href = targetUrl; });
             }
-        function updateKawachForm() {
+            function updateKawachForm() {
         const codRadio = document.querySelector('input[name="payment_mode"]:checked');
         const submitBtn = document.querySelector('#chamberView button[type="submit"]');
+        const formEl = document.querySelector('#chamberView form');
+        
         if (!submitBtn || !codRadio) return;
         
         if (codRadio.value === 'cod') {
             submitBtn.innerHTML = 'कैश ऑन डिलीवरी ऑर्डर कंफर्म करें (₹5,599)';
+            if(formEl) {
+                formEl.onsubmit = function(event) {
+                    event.preventDefault();
+                    alert('आपका कैश ऑन डिलीवरी (COD) ऑर्डर सफलतापूर्वक ले लिया गया है! हमारी टीम जल्द ही आपको कॉल करके पुष्टि करेगी।');
+                    window.location.reload();
+                };
+            }
         } else {
             submitBtn.innerHTML = 'सुरक्षित भुगतान करें और रिपोर्ट प्राप्त करें <span class=\'text-amber-400\'>₹4,999</span>';
+            if(formEl) {
+                formEl.onsubmit = function(event) {
+                    handleFormSubmit(event, 'https://payments.cashfree.com/forms?code=kawach-raksha');
+                };
+            }
         }
-        }
+            }
         
     </script>
 </body>
