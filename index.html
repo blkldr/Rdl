@@ -834,6 +834,7 @@
                     </label>
                 </div>
             </div>
+            
         `
     },
                     
@@ -1168,7 +1169,7 @@
         fetch("https://api.web3forms.com/submit", { method: "POST", body: formData })
             .finally(() => { window.location.href = targetUrl; });
             }
-            function updateKawachForm() {
+              function updateKawachForm() {
         const codRadio = document.querySelector('input[name="payment_mode"]:checked');
         const submitBtn = document.querySelector('#chamberView button[type="submit"]');
         const formEl = document.querySelector('#chamberView form');
@@ -1180,8 +1181,36 @@
             if(formEl) {
                 formEl.onsubmit = function(event) {
                     event.preventDefault();
-                    alert('आपका कैश ऑन डिलीवरी (COD) ऑर्डर सफलतापूर्वक ले लिया गया है! हमारी टीम जल्द ही आपको कॉल करके पुष्टि करेगी।');
-                    window.location.reload();
+                    
+                    // 1. Pehle data ko Web3Forms par bhejenge taaki turant email aa jaye
+                    const formData = new FormData(event.target);
+                    if(!formData.has('access_key')) {
+                        formData.append('access_key', '8aa10015-b67e-413c-9dab-a0ceb04f26cb');
+                    }
+                    formData.set('subject', 'Mahaghor Raksha Kawach COD Order');
+                    
+                    fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                    });
+                    
+                    // 2. Ab shandar success screen dikhayenge
+                    const chamberContent = document.querySelector('#chamberView');
+                    if(chamberContent) {
+                        chamberContent.innerHTML = `
+                            <div class="text-center py-10 px-4 bg-black/80 rounded-3xl border border-amber-500/40 text-white max-w-lg mx-auto my-10 shadow-2xl">
+                                <div class="text-6xl mb-4">🎉</div>
+                                <h3 class="text-2xl font-bold text-amber-400 mb-2">ऑर्डर सफलतापूर्वक दर्ज हो गया है!</h3>
+                                <p class="text-sm text-gray-300 mb-6">आपका महा-अघोर रक्षा कवच (COD) के तहत बुक कर लिया गया है। हमारी टीम जल्द ही आपको कॉल करके पक्का करेगी और 7 दिन के भीतर आपके पते पर भेज देगी।</p>
+                                <div class="p-4 bg-amber-950/30 rounded-xl border border-amber-500/30 text-xs text-amber-300 mb-6">
+                                    💰 कुल देय राशि (Cash on Delivery): <strong>₹5,599</strong>
+                                </div>
+                                <button onclick="window.location.reload()" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold rounded-xl shadow-lg hover:opacity-95 transition">
+                                    होम पेज पर वापस जाएं
+                                </button>
+                            </div>
+                        `;
+                    }
                 };
             }
         } else {
@@ -1192,7 +1221,7 @@
                 };
             }
         }
-            }
+              }
         
     </script>
 </body>
