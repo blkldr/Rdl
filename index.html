@@ -89,21 +89,62 @@
 <main id="services" class="max-w-7xl mx-auto px-6 pb-20">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- 1. Manchaha Pyar & Vashikaran -->
-        <div onclick="openChamber('pyar')" class="mystic-card p-7 rounded-3xl cursor-pointer group border-amber-500/40 overflow-hidden flex flex-col justify-between">
-            <div>
-                <div class="mb-4 rounded-2xl overflow-hidden border border-amber-500/20 h-44">
-                    <img src="https://images.openai.com/static-rsc-4/FmjQvKXZKp0kFTyEB6QFDEW4HtsFp_EKmyARNDlXVpCzb-E-kyQKzgWkzpHILv9UK3QgcTPKz8zFvZJASNW3XktqStB6-Ssd6FwDFI4NIiDGUMlbdraVnQuClNaJF-frcSgPNxHGD4-Sy2hl5FsOIcgTwedJBTX-Aobi3t1Vl346EITUxNOqNigsiG0xgkAe?purpose=fullsize" alt="Manchaha Pyar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-3xl p-2.5 bg-amber-500/10 rounded-2xl border border-amber-500/20">❤️‍🔥</span>
-                    <span class="gold-text font-black text-base">₹1,499</span>
-                </div>
-                <h3 class="heading-font font-bold text-lg text-white mb-2 group-hover:text-amber-400 transition">मनचाहा प्यार, Ex Back और तीव्र वशीकरण</h3>
-                <p class="text-xs text-gray-300 mb-5 leading-relaxed">पार्टनर को अपने वश में करें, रूठे हुए प्यार को वापस पाएं। फोटो अपलोड और गुप्त बंधन अनुष्ठान।</p>
+        pyar: {
+    title: "मनचाहा प्यार, Ex Back और तीव्र वशीकरण",
+    price: "₹1,499",
+    action: "https://payments.cashfree.com/forms?code=astrovedic-1hhHmanchaha-pyarhhhhH",
+    icon: "❤️‍🔥",
+    badge: "विशेष प्रेम वशीकरण अनुष्ठान",
+    fields: `
+        <div class='space-y-3 text-xs text-gray-300 leading-relaxed bg-amber-950/20 p-4 rounded-2xl border border-amber-500/20 mb-4 text-left'>
+            <div class='inline-block px-2.5 py-1 bg-amber-500/20 rounded-full text-amber-300 text-[11px] font-bold mb-2'>🔥 गुप्त अघोर साधना व उच्चाटन अनुष्ठान</div>
+            
+            <div class='font-bold text-amber-400 text-sm mb-1 text-center'>💞 मनचाहा प्यार और Ex-Back: पूर्ण विवरण और प्रभाव</div>
+            <p class='text-gray-300 text-center mb-3'>यह कोई साधारण प्रेम वशीकरण नहीं है। यह श्मशान की राख, रूहानी शक्तियों और गुप्त अघोर साधनाओं का वह भयानक अनुष्ठान है, जो किसी भी पत्थर दिल इंसान को भी घुटनों पर लाने की ताकत रखता है।</p>
+
+            <!-- Key Powers & Effects -->
+            <div class='mb-3'>
+                <strong class='text-amber-400 block mb-1'>⭐ यह अनुष्ठान क्या-क्या करता है? (Key Powers & Effects):</strong>
+                <ul class='list-disc pl-4 space-y-1 text-gray-300'>
+                    <li><strong>जिद्दी से जिद्दी इंसान को घुटनों पर लाना:</strong> जिस इंसान ने आपको ब्लॉक कर दिया है, ठुकरा दिया है, या पूरी तरह अजनबी बन बैठा है, उसके घमंड और गुरूर को मिट्टी में मिलाकर उसे तड़पाने के लिए मजबूर कर देता है।</li>
+                    <li><strong>तीसरे इंसान को हमेशा के लिए रास्ते से हटाना (उच्चाटन):</strong> अगर आपके प्यार के बीच कोई दूसरा आ गया है या आपका पार्टनर किसी और के साथ खुश है, तो उन दोनों के बीच ऐसी भयंकर नफरत और क्लेश पैदा कर देता है कि वे एक-दूसरे की शक्ल देखना भी बर्दाश्त नहीं करते और हमेशा के लिए अलग हो जाते हैं।</li>
+                    <li><strong>दिमाग पर सीधा मानसिक कब्जा (Mind Control):</strong> सोते-जागते, उठते-बैठते सिर्फ आपकी ही तस्वीर उसकी आँखों के सामने घूमेगी। जब तक वह खुद रोते हुए आपको कॉल या मैसेज नहीं कर लेगा, उसे दुनिया में कहीं चैन नहीं मिलेगा।</li>
+                    <li><strong>रूहानी बंधन:</strong> यह ऐसा अदृश्य और खौफनाक तांत्रिक बंधन है जिसे चाहकर भी कोई डॉक्टर, ओझा या तांत्रिक काट नहीं सकता।</li>
+                </ul>
             </div>
-            <span class="text-xs font-bold text-amber-400 group-hover:underline">पोर्टल में प्रवेश करें →</span>
+
+            <!-- Process & Execution -->
+            <div>
+                <strong class='text-amber-400 block mb-1'>📍 यह कैसे संचालित किया जाता है? (Process & Execution):</strong>
+                <ul class='list-disc pl-4 space-y-1 text-gray-300'>
+                    <li><strong>श्मशान साधना विधि:</strong> यह क्रिया आपके और उस इंसान के नाम, फोटो और गुप्त सामग्री को लेकर मध्यरात्रि (अंधेरी रात) में श्मशान घाट या अघोर पीठ पर की जाती है।</li>
+                    <li><strong>असर दिखने का समय:</strong> इस खतरनाक अनुष्ठान का कातिलाना असर मात्र <strong>3 से 7 दिनों</strong> के भीतर दिखना शुरू हो जाता है, और इंसान खुद खींचा चला आता है।</li>
+                </ul>
+            </div>
         </div>
+
+        <div class="mb-4">
+            <label class="block text-xs font-bold text-amber-300 mb-2">आपका नाम और पार्टनर का नाम</label>
+            <input type="text" required placeholder="जैसे: राहुल और प्रिया" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-amber-400">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 bg-black/40 p-5 rounded-2xl border border-amber-500/20 mb-4">
+            <div>
+                <label class="block text-xs font-bold text-amber-300 mb-2">📸 आपकी स्पष्ट फोटो</label>
+                <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-amber-300 mb-2">📸 पार्टनर की फोटो</label>
+                <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-xs font-bold text-gray-300 mb-2">व्हाट्सएप नंबर (गुप्त उपाय व मंत्र प्राप्त करने हेतु)</label>
+            <input type="tel" required placeholder="मोबाइल नंबर" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-amber-400">
+        </div>
+    `
+},
 
         <!-- 2. Kala Jadu & Tantrik Prayog -->
         <div onclick="openChamber('tantra')" class="mystic-card p-7 rounded-3xl cursor-pointer group border-red-500/40 hover:border-red-500 relative overflow-hidden flex flex-col justify-between">
