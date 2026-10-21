@@ -600,7 +600,7 @@
         }, 5000);
 
                 const chambersData = {
-            Pyar: {
+            pyar: {
     title: "मनचाहा प्यार, Ex Back और तीव्र वशीकरण",
     price: "₹1,499",
     action: "https://payments.cashfree.com/forms?code=astrovedic-1hhHmanchaha-pyarhhhhH",
@@ -637,28 +637,27 @@
 
         <div class="mb-4">
             <label class="block text-xs font-bold text-gray-300 mb-2">आपका नाम और पार्टनर का नाम</label>
-            <input type="text" required placeholder="जैसे: राहुल और प्रिया" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm">
+            <input type="text" required name="names" placeholder="जैसे: राहुल और प्रिया" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm">
         </div>
         <div class="grid grid-cols-2 gap-4 bg-black/40 p-5 rounded-2xl border border-amber-500/20 mb-4">
             <div>
                 <label class="block text-xs font-bold text-amber-300 mb-2">📸 आपकी स्पष्ट फोटो</label>
-                <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
+                <input type="file" name="your_photo" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
             </div>
             <div>
                 <label class="block text-xs font-bold text-amber-300 mb-2">📸 पार्टनर की फोटो</label>
-                <input type="file" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
+                <input type="file" name="partner_photo" accept="image/*" class="w-full text-xs text-gray-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-400 file:text-slate-950 file:font-bold">
             </div>
         </div>
         
-        <!-- नया बॉक्स जहाँ यूजर अपनी इच्छा या समस्या विस्तार से लिख सके -->
         <div class="mb-4">
             <label class="block text-xs font-bold text-gray-300 mb-2">आप क्या चाहते हैं या क्या समस्या है? (विस्तार से लिखें)</label>
-            <textarea rows="3" placeholder="यहाँ अपनी पूरी बात या अपनी इच्छा विस्तार से लिखें..." class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3 text-white text-sm"></textarea>
+            <textarea rows="3" name="user_message" placeholder="यहाँ अपनी पूरी बात या अपनी इच्छा विस्तार से लिखें..." class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3 text-white text-sm"></textarea>
         </div>
 
         <div class="mb-4">
             <label class="block text-xs font-bold text-gray-300 mb-2">व्हाट्सएप नंबर (गुप्त उपाय व मंत्र प्राप्त करने हेतु)</label>
-            <input type="tel" required placeholder="मोबाइल नंबर" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm">
+            <input type="tel" required name="phone" placeholder="मोबाइल नंबर" class="w-full bg-black/70 border border-amber-500/30 rounded-xl px-4 py-3.5 text-white text-sm">
         </div>
     `
 },
